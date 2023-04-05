@@ -91,6 +91,9 @@ public class DiaDia {
 			IO.mostraMessaggio("Hai vinto!");
 			return true;
 			
+		}else if(this.partita.getGiocatore().getCfu() == 0) {
+			IO.mostraMessaggio("CFU terminati...mi dispiace, hai perso!");
+			return true;
 		} else  //Altrimenti continua.
 			return false;
 	}   

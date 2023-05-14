@@ -1,6 +1,6 @@
 package it.uniroma3.diadia.ambienti;
 
-import it.uniroma3.diadia.*;
+
 
 public class StanzaBloccata extends Stanza{
 
@@ -18,6 +18,7 @@ public class StanzaBloccata extends Stanza{
 	 * Se la direzione è quella bloccata, e nella stanza non c'è l'attrezzo che la sblocca,
 	 * allora ritorna un riferimento alla stanza corrente.
 	 */
+	
 	@Override
 	public Stanza getStanzaAdiacente(String dir) {
 
@@ -26,6 +27,7 @@ public class StanzaBloccata extends Stanza{
 				return this;
 		}
 		return super.getStanzaAdiacente(dir);
+		
 	}
 	
 	/**
@@ -34,9 +36,36 @@ public class StanzaBloccata extends Stanza{
 	@Override
 	public String getDescrizione() {
 		if(this.hasAttrezzo(attrezzoSblocca))
-			return this.toString();
+			return super.toString();
 		else
-			return this.toString() + "\nDirezione " + this.direzioneBloccata + " bloccata";
+			return super.toString() + "\nDirezione " + this.direzioneBloccata + " bloccata";
 	}
-
+	
+	public boolean isBloccata() {
+		return true;
+	}
+	
+	public String getAttrezzoSblocca() {
+		return this.attrezzoSblocca;
+	}
+	
+	public String getDirezioneBloccata() {
+		return this.direzioneBloccata;
+	}
+	
+	@Override
+	public boolean equals(Object o) {
+		//StanzaBloccata that = (StanzaBloccata)o;
+		//return this.getNome().equals(that.getNome()) && this.getAttrezzoSblocca().equals(that.getAttrezzoSblocca()) && this.getDirezioneBloccata().equals(that.getDirezioneBloccata());
+		return super.equals(o);
+	}
+	 
+	
+	
+	@Override
+	public String toString() {
+    	StringBuilder risultato = new StringBuilder();
+    	risultato.append(this.getNome());
+    	return risultato.toString();
+	}
 }

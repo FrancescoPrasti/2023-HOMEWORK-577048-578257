@@ -1,0 +1,9 @@
+package it.uniroma3.diadia.attrezzi;
+
+import java.util.Comparator;
+
+public class ComparatoreAttrezzoPerNome implements Comparator<Attrezzo>{
+	public int compare(Attrezzo a1, Attrezzo a2) {
+		return a1.getNome().compareTo(a2.getNome());
+	}
+}

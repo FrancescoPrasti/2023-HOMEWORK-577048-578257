@@ -1,7 +1,5 @@
 package it.uniroma3.diadia.ambienti;
 
-import it.uniroma3.diadia.*;
-
 public class StanzaBuia extends Stanza{
 
 	private String attrezzoSblocca;
@@ -21,6 +19,10 @@ public class StanzaBuia extends Stanza{
 			return this.toString();
 		else
 			return "Qui c'è buio pesto";
+	}
+	
+	public boolean isBuia() {
+		return true;
 	}
 	
 }

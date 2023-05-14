@@ -19,9 +19,9 @@ public class Partita {
 	private Labirinto labirinto;
 	private Giocatore giocatore;
 	
-	public Partita(){
+	public Partita(Labirinto labirinto){
 		this.finita = false;
-		this.labirinto = new Labirinto();
+		this.labirinto = labirinto;
 		this.giocatore = new Giocatore();
 		this.stanzaCorrente = labirinto.getStanzaIniziale();
 	}
@@ -57,6 +57,10 @@ public class Partita {
 	 */
 	public void setFinita() {
 		this.finita = true;
+	}
+	
+	public void setLabirinto(Labirinto labirinto) {
+		this.labirinto = labirinto;
 	}
 	
 	public Labirinto getLabirinto() {

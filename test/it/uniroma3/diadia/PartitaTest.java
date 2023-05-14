@@ -9,10 +9,17 @@ import org.junit.jupiter.api.Test;
 class PartitaTest {
 	
 	private Partita partita;
+	private Labirinto labirinto;
 	
 	@BeforeEach
 	public void setUp() {
-		partita = new Partita();
+		labirinto = new LabirintoBuilder()
+				.addStanzaIniziale("Atrio")
+				.addAttrezzo("martello", 5)
+				.addStanzaVincente("Biblioteca")
+				.addAdiacenza("Atrio", "Biblioteca", "nord")
+				.getLabirinto();
+		partita = new Partita(labirinto);
 	}
 	
 	@Test

@@ -44,5 +44,9 @@ public class StanzaMagica extends Stanza{
 	 attrezzo = this.modificaAttrezzo(attrezzo);
 	 return super.addAttrezzo(attrezzo);
 	 }
+	
+	public boolean isMagica() {
+		return true;
+	}
 
 }

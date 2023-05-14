@@ -12,11 +12,11 @@ public class ComandoPosa implements Comando{
 	// Metodo che permette al giocatore di rimuovere un attrezzo dalla borsa e di posarlo nella stanza in cui si trova.
 	public void esegui(Partita partita, IO io) {
 		Borsa borsa = partita.getGiocatore().getBorsa();
-		if(borsa.getNumeroAttrezzi()== 0)
+		if(borsa.getListaAttrezzi().size()== 0)
 			io.mostraMessaggio("La borsa non contiene attrezzi!");
 		else {
 			Stanza stanzaCorrente = partita.getStanzaCorrente();
-			if(stanzaCorrente.getNumeroAttrezzi() > 9)  //Ho raggiunto la capienza massima della stanza, cioè 10 attrezzi.
+			if(stanzaCorrente.getListaAttrezzi().size() == 10)  //Ho raggiunto la capienza massima della stanza, cioè 10 attrezzi.
 				io.mostraMessaggio("La stanza dove ti trovi non può contenere ulteriori attrezzi!");
 			else {
 				if(nomeAttrezzo == null) {  //Entro nell'if se l'utente inserisce solo "prendi" senza specificare il nome dell'attrezzo.

@@ -9,11 +9,11 @@ public class ComandoPrendi implements Comando{
 
 	private String nomeAttrezzo;
 
-	// Meetodo che permette al giocatore di rimuovere un attrezzo dalla stanza in cui si trova e di inserirlo nella borsa.
+	// Metodo che permette al giocatore di rimuovere un attrezzo dalla stanza in cui si trova e di inserirlo nella borsa.
 	@Override
 	public void esegui(Partita partita, IO io) {
 		Stanza stanzaCorrente = partita.getStanzaCorrente();
-		if(stanzaCorrente.getNumeroAttrezzi() == 0)
+		if(stanzaCorrente.getListaAttrezzi().size() == 0)
 			io.mostraMessaggio("Questa stanza non contiene attrezzi!");
 		else {
 			if(nomeAttrezzo == null) {  //Entro nell'if se l'utente inserisce solo "prendi" senza specificare il nome dell'attrezzo.

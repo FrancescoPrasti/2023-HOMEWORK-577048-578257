@@ -16,11 +16,18 @@ class ComandoPrendiTest {
 	private ComandoPrendi prendi;
 	private IO io;
 	private Partita partita;
+	private Labirinto labirinto;
 
 	@BeforeEach
 	void setUp() {
+		this.labirinto = new LabirintoBuilder()
+				.addStanzaIniziale("Atrio")
+				.addAttrezzo("martello", 3)
+				.addStanzaVincente("Biblioteca")
+				.addAdiacenza("Atrio", "Biblioteca", "nord")
+				.getLabirinto();
 		this.prendi = new ComandoPrendi();
-		this.partita = new Partita();
+		this.partita = new Partita(labirinto);
 		this.io = new IOConsole();
 	}
 
@@ -34,9 +41,9 @@ class ComandoPrendiTest {
 	
 	@Test
 	void testPrendiAttrezzoInStanzaCheLoContiene() {
-		this.prendi.setParametro("osso");
+		this.prendi.setParametro("martello");
 		this.prendi.esegui(partita, io);
-		assertTrue(this.partita.getGiocatore().getBorsa().hasAttrezzo("osso"));
+		assertTrue(this.partita.getGiocatore().getBorsa().hasAttrezzo("martello"));
 	}
 	
 	@Test

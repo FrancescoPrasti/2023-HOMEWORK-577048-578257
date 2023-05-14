@@ -5,17 +5,25 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import it.uniroma3.diadia.*;
+import it.uniroma3.diadia.ambienti.*;
 
 public class ComandoVaiTest {
 
 	private ComandoVai vai;
 	private IO io;
 	private Partita partita;
+	private Labirinto labirinto;
 	
 	@BeforeEach
 	public void setUp() {
+		this.labirinto = new LabirintoBuilder()
+				.addStanzaIniziale("Atrio")
+				.addAttrezzo("martello", 3)
+				.addStanzaVincente("Biblioteca")
+				.addAdiacenza("Atrio", "Biblioteca", "nord")
+				.getLabirinto();
 		vai = new ComandoVai();
-		partita = new Partita();
+		partita = new Partita(labirinto);
 		io = new IOConsole();
 	}
 

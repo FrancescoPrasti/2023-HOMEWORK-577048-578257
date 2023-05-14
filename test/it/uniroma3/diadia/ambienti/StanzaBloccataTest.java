@@ -6,7 +6,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import it.uniroma3.diadia.attrezzi.*;
 
-import it.uniroma3.diadia.Partita;
+
 
 class StanzaBloccataTest {
 
@@ -43,7 +43,7 @@ class StanzaBloccataTest {
 	@Test
 	void testStanzaConChiaveGetDescrizione() {
 		this.stanzaBloccata.addAttrezzo(new Attrezzo("chiave",2));
-		assertEquals("s1\nUscite:  nord\nAttrezzi nella stanza: chiave (2kg) ",this.stanzaBloccata.getDescrizione());
+		assertEquals("s1\nUscite:  nord\nAttrezzi nella stanza: chiave (2kg) ", this.stanzaBloccata.getDescrizione());
 	}
 
 }

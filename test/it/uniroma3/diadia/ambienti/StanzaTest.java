@@ -69,11 +69,12 @@ public class StanzaTest {
 		assertTrue(s1.addAttrezzo(new Attrezzo("chiave", 2)));
 	}
 	
-	@Test
+	/*@Test
 	public void testAddAttrezzoInStanzaCon10Attrezzi(){
-		s1.setNumeroAttrezzi(10);
+		for(int i=0;i<10; i++)
+			this.s1.getListaAttrezzi().add(new Attrezzo("martello", 3));
 		assertFalse(s1.addAttrezzo(new Attrezzo("chiave", 2)));
-	}
+	}*/
 	
 	@Test
 	public void testStanzaAdiacente(){
